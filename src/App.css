@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #000000;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,60 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.cajaLetra {
+  border: 1px solid grey;
+  width: 50px;
+  height: 50px;
+  margin: 3px;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  background: none;
+  width: 50px;
+  height: 50px;
+  float: left;
+  border: none;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+  margin: -1px 0 0 0;
+}
+
+.letraTeclado, .letraTecladoGrande {
+  background-color: grey;
+  border-radius: 2px;
+  padding: 5px;
+  height: 50px;
+  margin: 3px;
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.teclado {
+  margin: 50px auto 10px auto;
+  text-align: center;
+}
+
+.letraTeclado {
+  width: 35px;
+}
+
+.letraTecladoGrande {
+  width: 70px;
+}
+
+.row {
+  justify-content: center;
 }
