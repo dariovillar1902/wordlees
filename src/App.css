@@ -37,7 +37,7 @@
   }
 }
 
-.cajaLetra {
+.cajaLetra, .cajaEjemplo {
   border: 1px solid grey;
   width: 50px;
   height: 50px;
@@ -49,7 +49,7 @@
   align-items: center;
 }
 
-.input {
+.inputLetra, .inputEjemplo {
   background: none;
   width: 50px;
   height: 50px;
@@ -58,8 +58,8 @@
   color: white;
   font-size: 35px;
   font-weight: bold;
-  text-align: center;
   margin: -1px 0 0 0;
+  text-align: center;
 }
 
 .letraTeclado, .letraTecladoGrande {
@@ -74,21 +74,102 @@
   flex-direction: row;
   text-align: center;
   vertical-align: middle;
+  align-items: center;
+  justify-content: center;
 }
 
 .teclado {
-  margin: 50px auto 10px auto;
+  margin: 75px auto 10px auto;
   text-align: center;
 }
 
 .letraTeclado {
   width: 35px;
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 
 .letraTecladoGrande {
   width: 70px;
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.rowCajas {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.rowEjemplo {
+  display: flex;
+  flex-direction: row;
+}
+
+.far, .fas {
+  font-size: 30px;
 }
 
 .row {
   justify-content: center;
+}
+
+.rowAyuda {
+  display: flex;
+  flex-direction: row;
+  margin: 10px auto;
+  vertical-align: middle;
+}
+
+hr {
+  border: 1px solid white;
+}
+
+.lineaJuego {
+  margin-bottom: 75px;
+}
+
+#wordle {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.modal-content {
+  background-color: #000000;
+}
+
+.textoModal, .textoModalInstrucciones {
+  font-size: 15px;
+  text-align: left;
+}
+
+.textoModalInstrucciones {
+  margin-bottom: 0 !important;
+}
+
+#ayuda, #opciones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ejemploVerde {
+  background-color: #76B041;
+}
+
+.ejemploAmarillo {
+  background-color: #D99830;
+}
+
+.btn-close {
+  background-color: white;
+}
+
+#juegoNuevo {
+  background-color: #76B041;
+  color: white;
 }
