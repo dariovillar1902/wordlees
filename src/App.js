@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-const palabrasArray = ["vacas", "novia", "queso", "viejo", "disco", "oveja", "héroe", "rusia", "plata", "dañar", "bajón", "brisa", "hielo", "frase", "toser", "susto", "otoño", "forro", "golpe", "tanga", "peaje", "debut", "plomo", "monje", "genio", "ramal", "tropa", "morse", "llano", "verde", "prado", "barba", "pluma", "solar", "caras", "tropa", "toser", "látex", "oliva", "indio", "sidra", "mover", "pozos", "pillo", "cargo", "puños", "palma", "grado", "ancla", "doler", "señor", "herir", "brote", "ética", "crema", "manta", "vacía", "gallo", "orina", "puros", "pecho", "abrir", "dulce", "ancho", "hueso", "cabra", "horas", "remos", "patas", "salsa", "ataca", "ratas", "tórax", "hacha", "roble", "rueda", "araña", "pesar", "cebra", "buena", "letal", "ondas", "clips", "choza", "panal", "ciego", "madre", "perro", "mujer", "larva", "redes", "animo", "rubor", "tinto", "queso", "lleno", "bella", "orden", "micro", "llano", "super", "diosa", "canoa", "cajón", "leche", "adiós", "hielo", "robot", "pulpo", "salsa", "ático", "fondo", "guapa", "cerca", "valle", "tesis", "peaje", "oasis", "viuda", "comer", "sacar", "rojos", "acero", "borla", "vieja", "arroz", "sobre", "ramal", "pozos", "rigor", "plaza", "hacha", "horas", "tórax", "pesar", "ostra", "sordo", "error", "túnel", "cueva", "fotos", "civil", "salud", "regar", "viaje", "arena", "fruta", "polos", "extra", "venir", "fauna", "corto", "marca", "comer", "mocos", "actor", "cebra", "zorro", "hijos", "pista", "farol", "limón", "pluma", "manos", "cacao", "tutor", "yegua", "marea", "canta", "bella", "ídolo", "curso", "misil", "gasto", "ganar", "señas", "grito", "astro", "metal", "pizza", "vuelo", "recta", "reina", "judía", "hogar", "ratón", "enano", "rizos", "listo", "palos", "bolso", "freno", "jarra", "valle", "tigre", "tenis", "mujer", "bebés"];
+const palabrasArray = ["vacas", "novia", "queso", "viejo", "disco", "oveja", "heroe", "rusia", "plata", "dañar", "bajon", "brisa", "hielo", "frase", "toser", "susto", "otoño", "forro", "golpe", "tanga", "peaje", "debut", "plomo", "monje", "genio", "ramal", "tropa", "morse", "llano", "verde", "prado", "barba", "pluma", "solar", "caras", "tropa", "toser", "latex", "oliva", "indio", "sidra", "mover", "pozos", "pillo", "cargo", "puños", "palma", "grado", "ancla", "doler", "señor", "herir", "brote", "etica", "crema", "manta", "vacia", "gallo", "orina", "puros", "pecho", "abrir", "dulce", "ancho", "hueso", "cabra", "horas", "remos", "patas", "salsa", "ataca", "ratas", "torax", "hacha", "roble", "rueda", "araña", "pesar", "cebra", "buena", "letal", "ondas", "clips", "choza", "panal", "ciego", "madre", "perro", "mujer", "larva", "redes", "animo", "rubor", "tinto", "queso", "lleno", "bella", "orden", "micro", "llano", "super", "diosa", "canoa", "cajon", "leche", "adios", "hielo", "robot", "pulpo", "salsa", "atico", "fondo", "guapa", "cerca", "valle", "tesis", "peaje", "oasis", "viuda", "comer", "sacar", "rojos", "acero", "borla", "vieja", "arroz", "sobre", "ramal", "pozos", "rigor", "plaza", "hacha", "horas", "torax", "pesar", "ostra", "sordo", "error", "tunel", "cueva", "fotos", "civil", "salud", "regar", "viaje", "arena", "fruta", "polos", "extra", "venir", "fauna", "corto", "marca", "comer", "mocos", "actor", "cebra", "zorro", "hijos", "pista", "farol", "limon", "pluma", "manos", "cacao", "tutor", "yegua", "marea", "canta", "bella", "idolo", "curso", "misil", "gasto", "ganar", "señas", "grito", "astro", "metal", "pizza", "vuelo", "recta", "reina", "judia", "hogar", "raton", "enano", "rizos", "listo", "palos", "bolso", "freno", "jarra", "valle", "tigre", "tenis", "mujer", "bebes", "fruta", "algas", "matas", "acera", "bizco", "yunta", "tapar", "horno", "cable", "trozo", "plana", "canta", "balon", "libre", "nudos", "venus", "carpa", "temer", "guion", "varon", "tieso", "ciego", "cabra", "raton", "chita", "botes", "dolar", "coger", "sexta", "bache", "pelos", "lanza", "plana", "rival", "medir", "rueda", "sesos", "atico", "envio", "error", "señal", "cazar", "falda", "bolas", "fosas", "susto", "sello", "icono", "plomo", "error", "tapiz", "amigo", "pedir", "plazo", "recta", "algas", "cuero", "hielo", "tapas", "simio", "gente", "picos", "toser", "funda", "cacao", "pillo", "ramas", "preso", "cobra", "sobre", "marte", "miedo", "impar", "joyas", "dieta", "etnia", "ramas", "coste", "prado", "palos", "sismo", "dudar", "golpe"];
 
   function onlyUnique(value, index, self) {
       return self.indexOf(value) === index;
@@ -226,30 +226,42 @@ console.log(palabra);
 let filaActual = 1;
 let letrasIngresadas = 0;
 let palabraIngresada = "";
-document.addEventListener("keypress", function(event) {
-  var code = event.keyCode || event.which;
-
-  if(code === 16 || code === 13) {
-    if ((letrasIngresadas % 5) === 0 && letrasIngresadas !== 0){
+let indiceLetra = 0;
+document.addEventListener("keydown", function(event) {
+  // var code = event.keyCode || event.which;
+  const code = event.key;
+  if(code === 'Enter' || code === ' ') {
+    if (letrasIngresadas === 5){
       checkPalabra(palabraIngresada, palabra);
       filaActual += 1;
       letrasIngresadas = 0;
+      indiceLetra = 0;
       palabraIngresada = "";
     } else {
       console.log("No se puede cambiar de fila");
     }
-  } else {
-    letrasIngresadas += 1;
-    let indiceLetra = Math.floor(letrasIngresadas % 5);
-    if (indiceLetra === 0) {
-      indiceLetra = 5;
+  } else if (code === 'a' || code === 'b' || code === 'c' || code === 'd' || code === 'e' || code === 'f' || code === 'g' || code === 'h' || code === 'i' || code === 'j' || code === 'k' || code === 'l' || code === 'm' || code === 'n' || code === 'ñ' || code === 'o' || code === 'p' || code === 'q' || code === 'r' || code === 's' || code === 't' || code === 'u' || code === 'v' || code === 'w' || code === 'x' || code === 'y' || code === 'z') {
+    if (indiceLetra === 5){
+      return false;
+    } else {
+      indiceLetra += 1;
+      letrasIngresadas += 1;
     }
     let boxID = "box" + filaActual.toString() + indiceLetra.toString();
     let cajaActual = document.getElementById(boxID);
-    let letra = String.fromCharCode(code);
+    let letra = code;
     let letraMayus = letra.toUpperCase();
     cajaActual.value = letraMayus;
     palabraIngresada += letra;
+  } else if ((code === 'Backspace' || code === 'Delete') && letrasIngresadas !== 0){
+    console.log("Se borró una letra");
+    let boxID = "box" + filaActual.toString() + indiceLetra.toString();
+    let cajaActual = document.getElementById(boxID);
+    cajaActual.value = '';
+    letrasIngresadas -= 1;
+    indiceLetra -= 1;
+    palabraIngresada = palabraIngresada.slice(0, letrasIngresadas);
+    console.log(palabraIngresada);
   }
   event.preventDefault(); //prevent entry
 
@@ -287,7 +299,7 @@ document.addEventListener("keypress", function(event) {
           cajaActual.style.backgroundColor = "#D99830";
           letraActual.style.backgroundColor = "#D99830";
           estadoLetras[l] = true;
-          console.log("La letra " + letraPalabra[k] + " está en la posición incorrecta.");
+          console.log("La letra " + letraPalabra[k] + " esta en la posicion incorrecta.");
         }
       }
       for (let m = 0; m < 5; m++){
@@ -300,7 +312,11 @@ document.addEventListener("keypress", function(event) {
     }
     if (palabraIngresada === palabra){
       console.log("Las palabras coinciden");
+      alert("Ganaste! La palabra era: " + palabra + " y la adivinaste en " + filaActual + " intentos");
     } else {
+      if (filaActual === 6) {
+        alert("Perdiste! La palabra era: " + palabra);
+      }
       console.log("Las palabras no coinciden");
     }
   }
