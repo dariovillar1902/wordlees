@@ -13,7 +13,7 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Jugar Wordle en español, el juego de palabras furor de 2022. Creado por Josh Wardle y adaptado al español por Darío Villar"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.png" />
     <!--
@@ -48,4 +48,19 @@
   </body>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip({
+        trigger: 'click',
+        placement: 'bottom'
+      });
+        $('[data-toggle="tooltip"]').on('click', function() {
+            $(this).tooltip('show');
+            setTimeout(() => {
+              $(this).tooltip('hide');  
+            }, 2000);
+        });
+        })
+        
+  </script>
 </html>

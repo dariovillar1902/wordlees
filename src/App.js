@@ -309,7 +309,10 @@ function App() {
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div className="modal-body">
-                Próximamente
+                <p className="textoModal"> --- Próximamente --- </p>
+                <hr />
+                <p className="textoModal">Un juego creado por <a href="https://www.powerlanguage.co.uk/wordle/"> Josh Wardle </a></p>
+                <p className="textoModal">con versión en español hecha por <a href="https://github.com/dariovillar1902"> Darío Villar </a></p>
               </div>
             </div>
           </div>
@@ -344,6 +347,7 @@ function App() {
                 <p className="textoModal"> y la adivinaste en <span id="numeroIntentos"></span> intentos. </p>
               </div>
               <div className="modal-footer">
+                <button type="button" className="btn" id="compartir" data-toggle="tooltip" data-placement="top" title="Copiado al portapapeles">Compartir</button>
                 <button type="button" className="btn" id="juegoNuevo">Jugar de nuevo</button>
               </div>
             </div>
@@ -377,6 +381,7 @@ function App() {
                 </div>
               </div>
               <div className="modal-footer">
+                <button type="button" className="btn" id="compartir" data-toggle="tooltip" data-placement="top" title="Copiado al portapapeles">Compartir</button>
                 <button type="button" className="btn" id="juegoNuevo">Jugar de nuevo</button>
               </div>
             </div>
@@ -391,6 +396,9 @@ let filaActual = 1;
 let letrasIngresadas = 0;
 let palabraIngresada = "";
 let indiceLetra = 0;
+let textoCompartir = "Wordle Español - " + palabra + " - ";
+let textoFinal = "";
+let emojisCompartir = [];
 window.addEventListener("load", function(event){
   for (var p = 0; p < 5; p++){
     let boxGanadoraID = "boxGanadora" + (p + 1);
@@ -413,6 +421,7 @@ document.addEventListener("keydown", function(event) {
       letrasIngresadas = 0;
       indiceLetra = 0;
       palabraIngresada = "";
+      emojisCompartir.push("\n");
     }
   } else if (code === 'a' || code === 'b' || code === 'c' || code === 'd' || code === 'e' || code === 'f' || code === 'g' || code === 'h' || code === 'i' || code === 'j' || code === 'k' || code === 'l' || code === 'm' || code === 'n' || code === 'ñ' || code === 'o' || code === 'p' || code === 'q' || code === 'r' || code === 's' || code === 't' || code === 'u' || code === 'v' || code === 'w' || code === 'x' || code === 'y' || code === 'z' || code === 'A' || code === 'B' || code === 'C' || code === 'D' || code === 'E' || code === 'F' || code === 'G' || code === 'H' || code === 'I' || code === 'J' || code === 'K' || code === 'L' || code === 'M' || code === 'N' || code === 'Ñ' || code === 'O' || code === 'P' || code === 'Q' || code === 'R' || code === 'S' || code === 'T' || code === 'U' || code === 'V' || code === 'W' || code === 'X' || code === 'Y' || code === 'Z') {
     if (indiceLetra === 5){
@@ -446,6 +455,7 @@ document.addEventListener("click", function(event) {
       letrasIngresadas = 0;
       indiceLetra = 0;
       palabraIngresada = "";
+      emojisCompartir.push("\n");
     }
   } else if ((idClick === 'delete') && letrasIngresadas !== 0){
     let boxID = "box" + filaActual.toString() + indiceLetra.toString();
@@ -456,6 +466,8 @@ document.addEventListener("click", function(event) {
     palabraIngresada = palabraIngresada.slice(0, letrasIngresadas);
   } else if (idClick === "juegoNuevo") {
     document.location.reload();
+  } else if (idClick === "compartir") {
+    navigator.clipboard.writeText(textoFinal);
   } else if (idClick === "closeGanador") {
     document.getElementById("modalGanador").classList.remove("show");
     document.getElementById("modalGanador").setAttribute("role", "dialog");
@@ -487,6 +499,7 @@ function checkPalabra(palabraIngresada, palabra){
   let letraPalabra = [];
   let letraPalabraIngresada = [];
   let estadoLetras = [];
+  let filaEmojis = [];
   for (let i = 0; i < 5; i++) {
     letraPalabra[i] = palabra.slice(i, i+1);
   }
@@ -506,6 +519,7 @@ function checkPalabra(palabraIngresada, palabra){
       cajaActual.style.backgroundColor = "#76B041";
       letraActual.style.backgroundColor = "#76B041";
       estadoLetras[k] = true;
+      filaEmojis[k] = "🟩";
     }
     for (let l = 0; l < 5; l++){
       if (letraPalabra[k] === letraPalabraIngresada[l] && letraPalabra[k] !== letraPalabraIngresada[k]){
@@ -515,27 +529,30 @@ function checkPalabra(palabraIngresada, palabra){
         cajaActual.style.backgroundColor = "#D99830";
         letraActual.style.backgroundColor = "#D99830";
         estadoLetras[l] = true;
+        filaEmojis[l] = "🟨";
       }
     }
     for (let m = 0; m < 5; m++){
       if (estadoLetras[m] === false){
         let letraActual = document.getElementById(letraPalabraIngresada[m]);
         letraActual.style.backgroundColor = "#000000";
+        filaEmojis[m] = "⬛";
       }
     }
-    
   }
+  emojisCompartir.push(filaEmojis.join(''));
   if (palabraIngresada === palabra){
     document.getElementById("numeroIntentos").innerText = filaActual;
     document.getElementById("modalGanador").classList.add("show");
     document.getElementById("modalGanador").setAttribute("role", "dialog");
     document.getElementById("modalGanador").style.display = "block";
-    //alert("Ganaste! La palabra era: " + palabra + " y la adivinaste en " + filaActual + " intentos");
+    textoFinal = textoCompartir + filaActual + "/6\n\n" + emojisCompartir.join('') + "\n\nwordlees.vercel.app";
   } else {
     if (filaActual === 6) {
       document.getElementById("modalPerdedor").classList.add("show");
       document.getElementById("modalPerdedor").setAttribute("role", "dialog");
       document.getElementById("modalPerdedor").style.display = "block";
+      textoFinal = textoCompartir + "X/6\n\n" + emojisCompartir.join('') + "\n\nwordlees.vercel.app";
     }
   }
 }
