@@ -72,7 +72,6 @@
   width: 50px;
   height: 50px;
   margin: 3px;
-  font-size: 35px;
   font-weight: bold;
   text-align: center;
   -webkit-box-pack: center;
@@ -90,10 +89,14 @@
   float: left;
   border: none;
   color: white;
-  font-size: 35px;
+  font-size: 1.45em;
   font-weight: bold;
-  margin: -1px 0 0 0;
   text-align: center;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .letraTeclado, .letraTecladoGrande {
@@ -119,6 +122,10 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+body {
+  position: static !important
 }
 
 .teclado {
