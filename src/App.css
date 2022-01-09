@@ -60,6 +60,9 @@
   font-weight: bold;
   margin: -1px 0 0 0;
   text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none; /* Firefox */
+  -ms-appearance: none; /* IE10+/Edge */
 }
 
 .letraTeclado, .letraTecladoGrande {
@@ -84,7 +87,7 @@
 }
 
 .letraTeclado {
-  width: 35px;
+  width: 2em;
   -webkit-user-select: none; /* Safari */        
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
@@ -92,7 +95,7 @@
 }
 
 .letraTecladoGrande {
-  width: 70px;
+  width: 4em;
   -webkit-user-select: none; /* Safari */        
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
