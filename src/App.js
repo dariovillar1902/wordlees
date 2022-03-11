@@ -2,23 +2,23 @@ import './App.css';
 
 const palabrasArray = ["vacas", "novia", "queso", "viejo", "disco", "oveja", "heroe", "rusia", "plata", "dañar", "bajon", "brisa", "hielo", "frase", "toser", "susto", "otoño", "forro", "golpe", "tanga", "peaje", "debut", "plomo", "monje", "genio", "ramal", "tropa", "morse", "llano", "verde", "prado", "barba", "pluma", "solar", "caras", "tropa", "toser", "latex", "oliva", "indio", "sidra", "mover", "pozos", "pillo", "cargo", "puños", "palma", "grado", "ancla", "doler", "señor", "herir", "brote", "etica", "crema", "manta", "vacia", "gallo", "orina", "puros", "pecho", "abrir", "dulce", "ancho", "hueso", "cabra", "horas", "remos", "patas", "salsa", "ataca", "ratas", "torax", "hacha", "roble", "rueda", "araña", "pesar", "cebra", "buena", "letal", "ondas", "clips", "choza", "panal", "ciego", "madre", "perro", "mujer", "larva", "redes", "animo", "rubor", "tinto", "queso", "lleno", "bella", "orden", "micro", "llano", "super", "diosa", "canoa", "cajon", "leche", "adios", "hielo", "robot", "pulpo", "salsa", "atico", "fondo", "guapa", "cerca", "valle", "tesis", "peaje", "oasis", "viuda", "comer", "sacar", "rojos", "acero", "borla", "vieja", "arroz", "sobre", "ramal", "pozos", "rigor", "plaza", "hacha", "horas", "torax", "pesar", "ostra", "sordo", "error", "tunel", "cueva", "fotos", "civil", "salud", "regar", "viaje", "arena", "fruta", "polos", "extra", "venir", "fauna", "corto", "marca", "comer", "mocos", "actor", "cebra", "zorro", "hijos", "pista", "farol", "limon", "pluma", "manos", "cacao", "tutor", "yegua", "marea", "canta", "bella", "idolo", "curso", "misil", "gasto", "ganar", "señas", "grito", "astro", "metal", "pizza", "vuelo", "recta", "reina", "judia", "hogar", "raton", "enano", "rizos", "listo", "palos", "bolso", "freno", "jarra", "valle", "tigre", "tenis", "mujer", "bebes", "fruta", "algas", "matas", "acera", "bizco", "yunta", "tapar", "horno", "cable", "trozo", "plana", "canta", "balon", "libre", "nudos", "venus", "carpa", "temer", "guion", "varon", "tieso", "ciego", "cabra", "raton", "chita", "botes", "dolar", "coger", "sexta", "bache", "pelos", "lanza", "plana", "rival", "medir", "rueda", "sesos", "atico", "envio", "error", "señal", "cazar", "falda", "bolas", "fosas", "susto", "sello", "icono", "plomo", "error", "tapiz", "amigo", "pedir", "plazo", "recta", "algas", "cuero", "hielo", "tapas", "simio", "gente", "picos", "toser", "funda", "cacao", "pillo", "ramas", "preso", "cobra", "sobre", "marte", "miedo", "impar", "joyas", "dieta", "etnia", "ramas", "coste", "prado", "palos", "sismo", "dudar", "golpe", "video", "audaz", "carro", "bello", "ninja", "pulpo", "rogar", "vivir", "fallo", "brote", "senda", "lapiz", "sauce", "jabon", "negro", "fauna", "debil", "ruido", "falda", "vagon", "hacer", "blusa", "sidra", "bebes", "cejas", "fluir", "brisa", "tubos", "otoño", "plaga", "pisos", "tibio", "arado", "queja", "oliva", "ramas", "guion", "genio", "tieso", "vital", "angel", "tejer", "jarra", "pares", "hogar", "muela", "nuevo", "pavos", "pesar", "virus", "telon", "termo", "heroe", "error", "rubia", "ataca", "nafta", "hilos", "rango", "oasis", "vista", "salud", "tocar", "aviso", "mando", "rotor", "actor", "canta", "trazo", "antes", "rutas", "tapas", "curva", "bizco", "hilos", "fruta", "grado", "armas", "vidal", "mares", "laser", "pulpo", "banda", "risas", "robar", "pasta", "datil", "morsa", "mango", "final", "album", "natal", "ojear", "tapiz", "cebar", "panda", "oveja", "pulga", "lento", "cifra", "carne", "micro", "debil", "patio", "botin", "mayor", "choza", "raton", "animo", "potro", "color", "exito", "cosas", "jamon", "nieve", "calvo", "pulga", "trono", "aspen", "clara", "atomo", "malla", "torpe", "fibra", "sobre", "echar", "avion", "campo", "humor", "criar", "rayas", "cesta", "sucio", "audio", "aleta", "buque", "gorra", "plomo", "amigo", "bombo", "torno", "guapo", "pegar", "bolsa", "melon", "pinta", "justa", "huido", "novio", "labio", "grasa", "grupo", "ropas", "guapo", "honda", "copia", "tabla", "santo", "puñal", "chico", "vacio", "multa", "salsa", "papel", "salas", "prisa", "carro", "gusto", "miope", "galan", "ramos", "jugar", "anden", "aldea", "ficha", "haren", "saber", "caldo", "misil", "metro", "ovalo", "latir", "corto", "gafas", "finca", "cabra", "enero", "maton", "arder", "espia", "dulce", "verbo", "lucro", "mojar", "carta", "piano", "dosis", "niñas", "sumar", "chino", "ducha", "poema", "forma", "menor", "carga", "hueso", "abeja", "pausa", "oxido", "turno"];
 
-  function onlyUnique(value, index, self) {
-      return self.indexOf(value) === index;
-    }
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
 
-  var unique = palabrasArray.filter(onlyUnique);
-  var indice = Math.floor(Math.random()*unique.length);
-  var palabra = unique[indice];
+var unique = palabrasArray.filter(onlyUnique);
+var indice = Math.floor(Math.random() * unique.length);
+var palabra = unique[indice];
 
 function App() {
-  
+
   return (
     <div className="App">
       <header className="App-header">
-      <div className="col-xxl-4"></div>
+        <div className="col-xxl-4"></div>
         <div className="col-xxl-4">
           <div className="rowAyuda container">
-          <div id="ayuda" className="col-2">
+            <div id="ayuda" className="col-2">
               <i className="far fa-question-circle" data-bs-toggle="modal" data-bs-target="#modalAyuda"></i>
             </div>
             <div id="wordle" className="col-8">
@@ -399,23 +399,23 @@ let indiceLetra = 0;
 let textoCompartir = "Wordle Español - " + palabra + " - ";
 let textoFinal = "";
 let emojisCompartir = [];
-window.addEventListener("load", function(event){
-  for (var p = 0; p < 5; p++){
+window.addEventListener("load", function (event) {
+  for (var p = 0; p < 5; p++) {
     let boxGanadoraID = "boxGanadora" + (p + 1);
     let boxPerdedoraID = "boxPerdedora" + (p + 1);
     let cajaActual = document.getElementById(boxGanadoraID);
     let cajaActual2 = document.getElementById(boxPerdedoraID);
-    let letra = palabra.slice(p, p+1);
+    let letra = palabra.slice(p, p + 1);
     let letraMayus = letra.toUpperCase();
     cajaActual.value = letraMayus;
     cajaActual2.value = letraMayus;
   }
 });
-document.addEventListener("keydown", function(event) {
+document.addEventListener("keydown", function (event) {
   // var code = event.keyCode || event.which;
   const code = event.key;
-  if(code === 'Enter' || code === ' ') {
-    if (letrasIngresadas === 5){
+  if (code === 'Enter' || code === ' ') {
+    if (letrasIngresadas === 5) {
       checkPalabra(palabraIngresada, palabra);
       filaActual += 1;
       letrasIngresadas = 0;
@@ -424,7 +424,7 @@ document.addEventListener("keydown", function(event) {
       emojisCompartir.push("\n");
     }
   } else if (code === 'a' || code === 'b' || code === 'c' || code === 'd' || code === 'e' || code === 'f' || code === 'g' || code === 'h' || code === 'i' || code === 'j' || code === 'k' || code === 'l' || code === 'm' || code === 'n' || code === 'ñ' || code === 'o' || code === 'p' || code === 'q' || code === 'r' || code === 's' || code === 't' || code === 'u' || code === 'v' || code === 'w' || code === 'x' || code === 'y' || code === 'z' || code === 'A' || code === 'B' || code === 'C' || code === 'D' || code === 'E' || code === 'F' || code === 'G' || code === 'H' || code === 'I' || code === 'J' || code === 'K' || code === 'L' || code === 'M' || code === 'N' || code === 'Ñ' || code === 'O' || code === 'P' || code === 'Q' || code === 'R' || code === 'S' || code === 'T' || code === 'U' || code === 'V' || code === 'W' || code === 'X' || code === 'Y' || code === 'Z') {
-    if (indiceLetra === 5){
+    if (indiceLetra === 5) {
       return false;
     } else {
       indiceLetra += 1;
@@ -436,7 +436,7 @@ document.addEventListener("keydown", function(event) {
     let letraMayus = letra.toUpperCase();
     cajaActual.value = letraMayus;
     palabraIngresada += letra.toLowerCase();
-  } else if ((code === 'Backspace' || code === 'Delete') && letrasIngresadas !== 0){
+  } else if ((code === 'Backspace' || code === 'Delete') && letrasIngresadas !== 0) {
     let boxID = "box" + filaActual.toString() + indiceLetra.toString();
     let cajaActual = document.getElementById(boxID);
     cajaActual.value = '';
@@ -446,10 +446,10 @@ document.addEventListener("keydown", function(event) {
   }
   event.preventDefault(); //prevent entry
 });
-document.addEventListener("click", function(event) {
+document.addEventListener("click", function (event) {
   let idClick = event.target.id;
   if (idClick === 'enter') {
-    if (letrasIngresadas === 5){
+    if (letrasIngresadas === 5) {
       checkPalabra(palabraIngresada, palabra);
       filaActual += 1;
       letrasIngresadas = 0;
@@ -457,7 +457,7 @@ document.addEventListener("click", function(event) {
       palabraIngresada = "";
       emojisCompartir.push("\n");
     }
-  } else if ((idClick === 'delete') && letrasIngresadas !== 0){
+  } else if ((idClick === 'delete') && letrasIngresadas !== 0) {
     let boxID = "box" + filaActual.toString() + indiceLetra.toString();
     let cajaActual = document.getElementById(boxID);
     cajaActual.value = '';
@@ -476,10 +476,10 @@ document.addEventListener("click", function(event) {
     document.getElementById("modalPerdedor").classList.remove("show");
     document.getElementById("modalPerdedor").setAttribute("role", "dialog");
     document.getElementById("modalPerdedor").style.display = "none";
-  } else if (idClick === '' || idClick.length !== 1){
+  } else if (idClick === '' || idClick.length !== 1) {
     return false;
   } else {
-    if (indiceLetra === 5){
+    if (indiceLetra === 5) {
       return false;
     } else {
       indiceLetra += 1;
@@ -491,28 +491,28 @@ document.addEventListener("click", function(event) {
     let letraMayus = letra.toUpperCase();
     cajaActual.value = letraMayus;
     palabraIngresada += letra;
-  } 
+  }
   event.preventDefault();
 
 });
-function checkPalabra(palabraIngresada, palabra){
+function checkPalabra(palabraIngresada, palabra) {
   let letraPalabra = [];
   let letraPalabraIngresada = [];
   let estadoLetras = [];
   let filaEmojis = [];
   for (let i = 0; i < 5; i++) {
-    letraPalabra[i] = palabra.slice(i, i+1);
+    letraPalabra[i] = palabra.slice(i, i + 1);
   }
   for (let j = 0; j < 5; j++) {
-    letraPalabraIngresada[j] = palabraIngresada.slice(j, j+1);
+    letraPalabraIngresada[j] = palabraIngresada.slice(j, j + 1);
     estadoLetras[j] = false;
   }
-  
+
   for (let k = 0; k < 5; k++) {
     let IDanim = "box" + filaActual.toString() + (k + 1).toString();
     let cajaAnim = document.getElementById(IDanim);
     cajaAnim.classList.add("animate__animated", "animate__flipInX");
-    if (letraPalabra[k] === letraPalabraIngresada[k]){
+    if (letraPalabra[k] === letraPalabraIngresada[k]) {
       let boxID = "box" + filaActual.toString() + (k + 1).toString();
       let cajaActual = document.getElementById(boxID);
       let letraActual = document.getElementById(letraPalabraIngresada[k]);
@@ -521,8 +521,8 @@ function checkPalabra(palabraIngresada, palabra){
       estadoLetras[k] = true;
       filaEmojis[k] = "🟩";
     }
-    for (let l = 0; l < 5; l++){
-      if (letraPalabra[k] === letraPalabraIngresada[l] && letraPalabra[k] !== letraPalabraIngresada[k]){
+    for (let l = 0; l < 5; l++) {
+      if (letraPalabra[k] === letraPalabraIngresada[l] && letraPalabra[k] !== letraPalabraIngresada[k]) {
         let boxID = "box" + filaActual.toString() + (l + 1).toString();
         let cajaActual = document.getElementById(boxID);
         let letraActual = document.getElementById(letraPalabraIngresada[l]);
@@ -532,8 +532,8 @@ function checkPalabra(palabraIngresada, palabra){
         filaEmojis[l] = "🟨";
       }
     }
-    for (let m = 0; m < 5; m++){
-      if (estadoLetras[m] === false){
+    for (let m = 0; m < 5; m++) {
+      if (estadoLetras[m] === false) {
         let letraActual = document.getElementById(letraPalabraIngresada[m]);
         letraActual.style.backgroundColor = "#000000";
         filaEmojis[m] = "⬛";
@@ -541,7 +541,7 @@ function checkPalabra(palabraIngresada, palabra){
     }
   }
   emojisCompartir.push(filaEmojis.join(''));
-  if (palabraIngresada === palabra){
+  if (palabraIngresada === palabra) {
     document.getElementById("numeroIntentos").innerText = filaActual;
     document.getElementById("modalGanador").classList.add("show");
     document.getElementById("modalGanador").setAttribute("role", "dialog");

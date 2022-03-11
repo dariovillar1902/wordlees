@@ -88,7 +88,7 @@
   height: 100%;
   float: left;
   border: none;
-  color: white;
+  color: white !important;
   font-size: 1.45em;
   font-weight: bold;
   text-align: center;
